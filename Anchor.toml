@@ -6,9 +6,7 @@ resolution = true
 skip-lint = false
 
 [programs.localnet]
-bank = "FiWfkSEsfkChcYvn42cWGpPKYga7qFEWX26Sx78TXmBr"
-big-accounts = "CVgWZ6G6DdvTaqQtzZiWs8k5qjDynxECC1KRkZWjRPGc"
-counter = "J5RWjigXEQfW3WrykWAsJvb58MqhDM8pqJBzVaWEFiAs"
+cpi = "Hc5tjKrVTViqXCWNUJCE1cDzYVuPzyAVj9rER47VcwT9"
 full_stack_solana = "HBq27XcCHHCyXbaVwacJyk6DpDTKfa2AnrcDrYEr48x"
 
 [registry]
