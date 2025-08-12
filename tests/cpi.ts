@@ -1,6 +1,6 @@
 import * as anchor from "@coral-xyz/anchor";
 import { Program, BN } from "@coral-xyz/anchor";
-import { Cpi } from "../target/types/cpi";
+// import { Cpi } from "../target/types/cpi";
 import {
   PublicKey,
   SystemProgram,
@@ -8,6 +8,10 @@ import {
   Transaction,
   sendAndConfirmTransaction,
 } from "@solana/web3.js";
+
+
+import { Cpi } from "../target/types/cpi";
+
 
 describe("cpi", () => {
   const provider = anchor.AnchorProvider.env();

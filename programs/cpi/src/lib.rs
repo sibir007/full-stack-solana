@@ -1,6 +1,6 @@
 use anchor_lang::prelude::*;
 use anchor_lang::system_program::{transfer, Transfer};
- 
+ use anchor_lang::solana_program::{program::invoke_signed, system_instruction};
 declare_id!("Hc5tjKrVTViqXCWNUJCE1cDzYVuPzyAVj9rER47VcwT9");
  
 #[program]
@@ -9,27 +9,26 @@ pub mod cpi {
  
 
 
-    pub fn sol_transfer(ctx: Context<SolTransfer>, amount: u64) -> Result<()> {
-        let from_pubkey = ctx.accounts.pda_account.to_account_info();
-        let to_pubkey = ctx.accounts.recipient.to_account_info();
-        let program_id = ctx.accounts.system_program.to_account_info();
+pub fn sol_transfer(ctx: Context<SolTransfer>, amount: u64) -> Result<()> {
+    let from_pubkey = ctx.accounts.pda_account.to_account_info();
+    let to_pubkey = ctx.accounts.recipient.to_account_info();
+    let program_id = ctx.accounts.system_program.to_account_info();
  
-        let seed = to_pubkey.key();
-        let bump_seed = ctx.bumps.pda_account;
-        let signer_seeds: &[&[&[u8]]] = &[&[b"pda", seed.as_ref(), &[bump_seed]]];
+    let seed = to_pubkey.key();
+    let bump_seed = ctx.bumps.pda_account;
  
-        let cpi_context = CpiContext::new(
-            program_id,
-            Transfer {
-                from: from_pubkey,
-                to: to_pubkey,
-            },
-        )
-        .with_signer(signer_seeds);
+
+    let signer_seeds: &[&[&[u8]]] = &[&[b"pda", seed.as_ref(), &[bump_seed]]];
  
-        transfer(cpi_context, amount)?;
-        Ok(())
-    }
+
+    let instruction =
+        &system_instruction::transfer(&from_pubkey.key(), &to_pubkey.key(), amount);
+ 
+
+
+    invoke_signed(instruction, &[from_pubkey, to_pubkey, program_id], signer_seeds)?;
+    Ok(())
+}
 }
  
 #[derive(Accounts)]
