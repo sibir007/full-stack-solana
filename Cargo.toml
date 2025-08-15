@@ -1,5 +1,6 @@
 [workspace]
-members = [
+members = [ 
+    "apps/getting_started_client",
     "programs/*"
 ]
 resolver = "2"
