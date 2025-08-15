@@ -6,8 +6,10 @@ use solana_program::{
     program::invoke,
     program_error::ProgramError,
     pubkey::Pubkey,
-    system_instruction,
+    // system_instruction,
 };
+
+use solana_system_interface::instruction::transfer;
 
 // Declare program entrypoint
 entrypoint!(process_instruction);
@@ -46,7 +48,7 @@ pub fn process_instruction(
             }
 
             // Create and invoke the transfer instruction
-            let transfer_ix = system_instruction::transfer(
+            let transfer_ix = transfer(
                 sender_info.key,
                 recipient_info.key,
                 amount,

@@ -8,6 +8,7 @@ skip-lint = false
 [programs.localnet]
 cpi = "Hc5tjKrVTViqXCWNUJCE1cDzYVuPzyAVj9rER47VcwT9"
 cpi-nativ = "64B3JtEpaDQn73ErruRbFrkMxFJVxNghMxYoRqqvwryj"
+cpi-pda = "ApmARekUCWpeN11gVjnkVZxV5nMQ9E6s6Qq1omfT6ZjW"
 full_stack_solana = "HBq27XcCHHCyXbaVwacJyk6DpDTKfa2AnrcDrYEr48x"
 
 [registry]
