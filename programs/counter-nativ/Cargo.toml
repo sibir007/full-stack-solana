@@ -1,10 +1,11 @@
 cargo-features = ["edition2024"]
 [package]
-name = "getting-started"
+name = "counter-nativ"
 version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+borsh.workspace = true
 solana-program.workspace = true
 
 [dev-dependencies]
@@ -13,6 +14,4 @@ solana-sdk.workspace = true
 
 [lib]
 crate-type = ["cdylib", "lib"]
-
-
 
