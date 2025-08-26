@@ -1,0 +1,18 @@
+[package]
+name = "counter-client"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio.workspace = true
+solana-client.workspace = true
+solana-sdk.workspace = true
+borsh.workspace = true
+counter-nativ = { path = "../../programs/counter-nativ" }
+
+# solana-program.workspace = true
+
+
+# [dependencies]
+# borsh.workspace = true
+# solana-program.workspace = true
