@@ -1,0 +1,16 @@
+[package]
+name = "nft-mint-nat"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+borsh.workspace = true
+borsh-derive.workspace = true
+mpl-token-metadata.workspace = true
+solana-program.workspace = true
+spl-associated-token-account.workspace = true
+spl-token.workspace = true
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
