@@ -2,7 +2,9 @@
   "license": "ISC",
   "scripts": {
     "lint:fix": "prettier */*.js \"*/**/*{.js,.ts}\" -w",
-    "lint": "prettier */*.js \"*/**/*{.js,.ts}\" --check"
+    "lint": "prettier */*.js \"*/**/*{.js,.ts}\" --check",
+    "nft-nat-test": "cargo build-sbf --manifest-path=./programs/nft-mint-nat/Cargo.toml &&  solana config set -ud && solana program deploy ./target/deploy/nft_mint_nat.so  && pnpm ts-mocha -p ./tsconfig.json -t 1000000 ./tests/nft-mint-nat.ts"
+
   },
   "dependencies": {
     "@coral-xyz/anchor": "^0.31.1",

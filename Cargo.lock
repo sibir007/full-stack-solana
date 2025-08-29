@@ -2563,6 +2563,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "nft-minter"
+version = "0.1.0"
+dependencies = [
+ "anchor-lang",
+ "anchor-spl",
+]
+
+[[package]]
 name = "nix"
 version = "0.29.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"

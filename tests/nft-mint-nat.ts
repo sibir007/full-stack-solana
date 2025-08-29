@@ -34,7 +34,7 @@ describe('NFT Minter', () => {
   
   const mintKeypair: Keypair = Keypair.generate();
   
-  console.log('Success!');
+  // console.log('Success!');
   it('Create an NFT!', async () => {
     const metadataAddress = PublicKey.findProgramAddressSync(
       [Buffer.from('metadata'), TOKEN_METADATA_PROGRAM_ID.toBuffer(), mintKeypair.publicKey.toBuffer()],
